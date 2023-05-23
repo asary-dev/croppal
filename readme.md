@@ -20,4 +20,5 @@ Tested on:
 
 ## Run Docker
 
+    populate the .env, DB should be postgres by default
     > docker-compose up --build
