@@ -13,7 +13,11 @@ Tested on:
 
 ## Run Locally
 
-    populate the .env
+    populate the .env, DB should be postgres by default
     > npm ci
     > npm run migrate
     > npm run dev
+
+## Run Docker
+
+    > docker-compose up --build
