@@ -6,7 +6,11 @@ import FarmRepository from "../repository";
 import { IGetAllFarmValues, IFarmDetail } from "../interface";
 
 const schema = Joi.object({
-  search: Joi.string().optional().allow(null, "").empty([null, ""]).default(""),
+  search: Joi.string()
+    .optional()
+    .allow(null, "")
+    .empty([null, "", "undefined"])
+    .default(""),
 });
 
 export default async function (
@@ -19,7 +23,7 @@ export default async function (
 
     let where = {
       name: {
-        [Op.iLike]: `%${value.search || ""}%`,
+        [Op.iLike]: `%${value?.search || ""}%`,
       },
     };
     console.log(where);
